@@ -1,0 +1,37 @@
+<hr>
+<div class="container">
+  <h1>{{courseName}}</h1>
+  <button class="btn btn-outline-success my-2 my-sm-0" (click)="goToConsole()">Go to Console</button>
+</div>
+<hr>
+<div class="container">
+  <h2>Today's Checkin Status</h2>
+  <h4>{{signUpSheet.length}} People checked in</h4>
+
+  <div class="input-group mb-3">
+    <input [(ngModel)]="inputText" type="text" class="form-control" placeholder="ex. Firstname Lastname" aria-label="ex. Firstname Lastname" aria-describedby="button-addon2">
+    <div class="input-group-append">
+      <button class="btn btn-outline-secondary" type="button" id="button-addon2" (click)="manualEntry()">Button</button>
+    </div>
+  </div>
+
+  <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">First</th>
+          <th scope="col">Last</th>
+          <th scope="col">Datetime</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let l of signUpSheet; let i = index">
+          <th scope="row">{{i+1}}</th>
+          <td>{{l.firstname}}</td>
+          <td>{{l.lastname}}</td>
+          <td>{{l.signUpDate | date:'medium'}}</td>
+        </tr>
+      </tbody>
+    </table>
+</div>

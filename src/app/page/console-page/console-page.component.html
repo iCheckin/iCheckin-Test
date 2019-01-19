@@ -1,0 +1,19 @@
+<hr>
+<div class="container">
+  <h1>Welcome, XXX</h1>
+  <hr>
+</div>
+<div class="container">
+
+  <div class="row">
+      <div *ngFor="let l of courses" class="card" style="width: 18rem; margin: 4px;">
+          <img src="https://dhggywfvre0o8.cloudfront.net/app/uploads/2017/11/22153252/Typeform-Blog-BlackFriday-Cover-AskAwesomely.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{l.name}}</h5>
+            <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+            <a routerLink="/course/{{l.name}}" routerLinkActive="active" class="btn btn-primary">View Course</a>
+          </div>
+        </div>
+  </div>
+
+</div>
